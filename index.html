@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Tic tac toe</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <script src="js/vendor/custom.modernizr.js"></script>
+</head>
+<body>
+	<div id="main-wrapper" class="row">
+		<br/>
+		<div class="large-8 columns">
+			<!-- Grid Example -->
+			<div class="row">
+				<div class="large-12 columns">
+					<div id="game-area"></div>
+				</div>
+			</div>
+		</div>
+		<div class="large-4 columns">
+			<p><a id="new-game" href="#" class="large button" data-reveal-id="new-game-modal">New game</a></p>
+			<h3 class="subheader">
+				<span id="turn-text"></span>
+				<span id="turn-symbol"></span>
+			</h3>
+		</div>
+	</div>
+
+	<div id="new-game-modal" class="reveal-modal small">
+		<span "new-game-modal-message"><h2>New game</h2></span>
+		<p>Grid size</p>
+		<select id="new-game-modal-size" class="small">
+	        <option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>			
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<p>How consecutive X:s or O:s it takes to win?</p>
+		<select id="new-game-modal-consecutive" class="small">
+	        <option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>			
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<a href="#" class="button right" onclick="initNewGame($('#new-game-modal-size').val(), $('#new-game-modal-consecutive').val())")>Go!</a>
+	</div>	
+	
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="js/game.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/foundation.min.js"></script>  
+  <script>
+    $(document).foundation();
+    openGameMenu();
+  </script>
+</body>
+</html>
